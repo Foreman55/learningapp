@@ -1,0 +1,48 @@
+How do you view all open buffers?,Use `:ls` or `:buffers`
+How do you switch to buffer 3?,Use `:b 3`
+How do you switch to the previous buffer?,Use `:b#`
+How do you delete (close) a buffer?,Use `:bd` or `:bdelete`
+How do you yank into register 'a'?,Use `"aY`
+How do you paste from register 'a'?,Use `"ap`
+How do you view all registers?,Use `:reg`
+How do you record a macro into register 'q'?,Use `qq` to start, perform actions, then `q` to stop
+How do you execute a macro from register 'q'?,Use `@q`
+How do you replay a macro across multiple lines?,Select lines and use `:normal @q`
+How do you substitute and confirm each change?,Use `:%s/old/new/gc`
+How do you delete all lines matching a pattern?,Use `:g/pattern/d`
+How do you delete all lines NOT matching a pattern?,Use `:v/pattern/d`
+How do you join multiple lines into one?,Use `J` repeatedly or visual-select and `:join`
+How do you format (reindent) a block?,Use `=`
+How do you indent selected lines right?,Use `>`
+How do you unindent selected lines?,Use `<`
+How do you shift visual selection right?,Use `>` in visual mode
+How do you insert the output of a shell command?,Use `:r !command` (e.g. `:r !date`)
+How do you execute a shell command without leaving Vim?,Use `:!command`
+How do you open a new tab?,Use `:tabnew`
+How do you switch to the next tab?,Use `gt`
+How do you switch to the previous tab?,Use `gT`
+How do you close a tab?,Use `:tabclose`
+How do you split and open a file in a new vertical split?,Use `:vsp filename`
+How do you change the current window?,Use `Ctrl-w` followed by a direction key (h/j/k/l)
+How do you resize a split?,Use `Ctrl-w` then `>` or `<`
+How do you enable syntax-based folding?,Use `:set foldmethod=syntax`
+How do you create a manual fold?,Use `zf` in visual mode or `zf{motion}`
+How do you open a fold?,Use `zo`
+How do you close a fold?,Use `zc`
+How do you toggle a fold?,Use `za`
+How do you map `jj` to escape insert mode?,Add `inoremap jj <Esc>` to your `.vimrc`
+How do you open your `.vimrc` file?,Use `:e $MYVIMRC`
+How do you reload your `.vimrc`?,Use `:source $MYVIMRC`
+How do you install plugins using vim-plug?,Use `:PlugInstall`
+How do you define a normal mode keybinding?,Use `nnoremap <key> <command>`
+How do you make search ignore case?,Use `:set ignorecase`
+How do you make search smart about case?,Use `:set smartcase`
+How do you use `:global` to run a command on all matching lines?,Use `:g/pattern/command`
+How do you read another file into current buffer?,Use `:r filename`
+How do you append a file’s content?,Use `:r filename` (adds it after current line)
+How do you set relative line numbers?,Use `:set relativenumber`
+How do you enable persistent undo?,Use `:set undofile`
+How do you view command history?,Use `q:`
+How do you view search history?,Use `q/`
+How do you list available help topics?,Use `:helptags` or `:h`
+How do you search Vim help for a topic?,Use `:h keyword` (e.g. `:h motion`)

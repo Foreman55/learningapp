@@ -1,0 +1,11 @@
+question,answerRegex,expectedDisplay
+den Kopf schütteln,^to shake one's head$,"to shake one's head"
+mit dem Kopf nicken,^to nod one's head$,"to nod one's head"
+sich am Kopf kratzen,^to scratch one's head$,"to scratch one's head"
+den Kopf zerbrechen,^to rack one's brain$,"to rack one's brain"
+über das Kinn streichen,^to stroke one's chin$,"to stroke one's chin"
+die Augen zusammenkneifen,^to squint$,"to squint"
+den Kopf zur Seite neigen,^to tilt head to side$,"to tilt head to side"
+kneifen,^to pinch$,"to pinch"
+anrempeln,^to bump into$,"to bump into"
+

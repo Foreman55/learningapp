@@ -1,0 +1,11 @@
+question,answerRegex
+What symbol matches any character?,\.
+What does * mean in regex?,(?i).*zero.*or.*more.*
+What does + mean in regex?,(?i).*one.*or.*more.*
+What does ? mean in regex?,(?i).*(zero.*or.*one|optional).*
+What does \d match?,(?i).*digit.*
+What does \w match?,(?i).*(word.*character|letter.*digit.*underscore).*
+What does \s match?,(?i).*whitespace.*
+What do square brackets [] do in regex?,(?i).*(match.*set|character.*class).*
+What does ^ mean at the start of a regex?,(?i).*(start.*of.*line|beginning).*
+What does $ mean at the end of a regex?,(?i).*(end.*of.*line|line.*end).*

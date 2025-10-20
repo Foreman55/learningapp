@@ -1,0 +1,25 @@
+What does the shell module do?,It allows you to open URLs in the default browser or files in external apps.
+How do you open a URL in Chrome?,Use shell.openExternal('https://example.com')
+How do you open a file in its default program?,Use shell.openPath('/path/to/file')
+What does the clipboard module allow?,Reading/writing to the system clipboard
+How do you read text from the clipboard?,clipboard.readText()
+How do you write text to the clipboard?,clipboard.writeText('Hello world!')
+What is the dialog module used for?,To show native dialogs like open/save file and alerts
+How do you show an alert dialog?,dialog.showMessageBox({ message: 'Alert!' })
+How do you open a file picker dialog?,dialog.showOpenDialog()
+How do you save a file with a dialog?,dialog.showSaveDialog()
+What does nativeImage do?,Handles image data for icons, thumbnails, drag previews, etc.
+How do you create a nativeImage from a PNG path?,nativeImage.createFromPath('icon.png')
+What does app.getPath() return?,Common directories like 'userData', 'temp', 'desktop'
+What does app.getVersion() return?,The version string from your app’s package.json
+What does powerMonitor do?,Listens for system events like suspend, resume, lock, and unlock
+How do you detect when the system suspends?,powerMonitor.on('suspend', () => { ... })
+What does the screen module provide?,Information about displays, resolutions, and coordinates
+How do you get the primary display size?,screen.getPrimaryDisplay().size
+How do you capture a screenshot of a display?,Use desktopCapturer and screen APIs
+What module is used to access system tray?,Tray from 'electron'
+How do you create a tray icon?,new Tray(nativeImage.createFromPath('icon.png'))
+How do you add a menu to the tray?,tray.setContextMenu(Menu.buildFromTemplate(...))
+How do you detect full-screen mode?,win.isFullScreen()
+How do you toggle fullscreen?,win.setFullScreen(true/false)
+How do you get current window from renderer?,Use require('electron').remote.getCurrentWindow() (deprecated) or contextBridge IPC

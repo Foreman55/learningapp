@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Questions</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="top-strip">
+    <a href="/practice-history">📜 Practice History</a>
+</div>
+<div class="general-sidebar">
+    <h2>Menu</h2>
+    <a href="/flashcards">📌 Flashcards</a>
+    <a href="/questions">❓ Questions</a>
+    <a href="/chatgpt-questions">🤖 ChatGPT Questions</a>
+    <a href="/summaries">📚 Summaries</a>
+    <a href="/german">🇩🇪 German</a>
+    <a href="/linux">🐧 Linux</a>
+</div>
+
+<div class="content">
+    <h1>❓ Programming Questions</h1>
+    <p><strong>Enter a topic:</strong></p>
+    <input type="text" id="topic" placeholder="E.g., Python, JavaScript">
+    <button onclick="fetchQuestions()">Get Programming Question</button>
+
+    <h2>Generated Question:</h2>
+    <p id="questionPlaceholder">Your question will appear here...</p>
+
+    <textarea id="answer" placeholder="Type your answer here..." rows="8" cols="60"></textarea>
+    <button onclick="submitAnswer()">Submit Answer</button>
+
+    <div id="feedbackBox" style="margin-top: 20px; white-space: pre-wrap;"></div>
+</div>
+
+<!-- Load Axios + Custom Script -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/gpt_questions.js"></script>
+</body>
+</html>

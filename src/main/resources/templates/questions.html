@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="top-strip">
+    <a href="/practice-history">📜 Practice History</a>
+</div>
+<div class="general-sidebar">
+    <h2>Menu</h2>
+    <a href="/flashcards">📌 Flashcards</a>
+    <a href="/questions">❓ Questions</a>
+    <a href="/chatgpt-questions">🤖 ChatGPT Questions</a>
+    <a href="/summaries">📚 Summaries</a>
+    <a href="/german">🇩🇪 German</a>
+    <a href="/linux">🐧 Linux</a>
+</div>
+
+<div class="content">
+    <h1>Questions</h1>
+    <input type="text" id="topic" placeholder="Enter topic" readonly>
+    <h2>Question</h2>
+    <div id="questionBox">Select a topic to load questions</div>
+    <h2>Your Answer:</h2>
+    <textarea id="answer" placeholder="Type your answer here..."></textarea>
+    <input type="hidden" id="expectedAnswer">
+    <button onclick="submitAnswer()">Submit Answer</button>
+    <div id="evaluateResult"></div>
+
+    <!-- Stack pagination controls -->
+    <div id="stackControls" style="margin: 12px 0; display: flex; flex-wrap: wrap; gap: 8px;"></div>
+
+    <!-- Right Sidebar Dropdown for Topics -->
+    <button class="dropdown-btn" onclick="toggleDropdown()">☰ Topics</button>
+    <div class="topic-dropdown" id="topicDropdown">
+        <a href="#" onclick="loadQuestions('networking')">Networking</a>
+        <a href="#" onclick="loadQuestions('regular_expressions')">Regular Expressions</a>
+        <a href="#" onclick="loadQuestions('sql')">SQL</a>
+        <a href="#" onclick="loadQuestions('sql_advanced')">SQL Advanced (PostgreSQL)</a>
+        <a href="#" onclick="loadQuestions('mysql')">MySQL</a>
+        <a href="#" onclick="loadQuestions('sqlite')">SQLite</a>
+        <a href="#" onclick="loadQuestions('sql_query')">sql_query</a>
+        <a href="#" onclick="loadQuestions('python')">Python</a>
+        <a href="#" onclick="loadQuestions('python_advanced')">Python Advanced (OOP)</a>
+        <a href="#" onclick="loadQuestions('git')">Git</a>
+        <a href="#" onclick="loadQuestions('playwright')">Playwright</a>
+    </div>
+
+    <div>
+        <h3>Stats</h3>
+        ✅ Correct: <span id="correctCount">0</span> |
+        ❌ Wrong: <span id="wrongCount">0</span>
+    </div>
+</div>
+<div id="sqlWrapper" style="margin-top: 40px; display: none; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+    <div id="sampleTables">
+        <h2>📄 Sample Tables</h2>
+
+        <h3><code>users</code></h3>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr><th>id</th><th>name</th><th>email</th></tr>
+            <tr><td>1</td><td>Alice</td><td>alice@example.com</td></tr>
+            <tr><td>2</td><td>Bob</td><td>bob@example.com</td></tr>
+            <tr><td>3</td><td>Charlie</td><td>charlie@example.com</td></tr>
+        </table>
+
+        <h3><code>orders</code></h3>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr><th>id</th><th>user_id</th><th>product</th><th>amount</th></tr>
+            <tr><td>1</td><td>1</td><td>Book</td><td>20.00</td></tr>
+            <tr><td>2</td><td>1</td><td>Pen</td><td>2.00</td></tr>
+            <tr><td>3</td><td>2</td><td>Backpack</td><td>45.00</td></tr>
+            <tr><td>4</td><td>3</td><td>Laptop</td><td>900.00</td></tr>
+        </table>
+    </div>
+
+    <div id="sqlRunner">
+        <h2>💻 SQL Sandbox</h2>
+        <textarea id="queryBox" placeholder="Write your SQL here..." rows="6" style="width: 100%; max-width: 500px;"></textarea><br>
+        <button onclick="runSQL()">Run Query</button>
+        <pre id="queryResult" style="margin-top: 10px; white-space: pre; overflow-x: auto; font-family: monospace; background: #f9f9f9; padding: 10px; border: 1px solid #ccc; max-width: 500px;"></pre>
+    </div>
+</div>
+
+
+
+<script src="/shared.js"></script>
+<script src="/questions.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
+</body>
+</html>

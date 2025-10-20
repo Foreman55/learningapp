@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summaries</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="top-strip">
+    <a href="/practice-history">📜 Practice History</a>
+</div>
+<div class="general-sidebar">
+    <h2>Menu</h2>
+    <a href="/flashcards">📌 Flashcards</a>
+    <a href="/questions">❓ Questions</a>
+    <a href="/chatgpt-questions">🤖 ChatGPT Questions</a>
+    <a href="/summaries">📚 Summaries</a>
+    <a href="/german">🇩🇪 German</a>
+    <a href="/linux">🐧 Linux</a>
+</div>
+
+<div class="content">
+    <h1>📚 Topic Summaries</h1>
+    <p>Select a topic to read a comprehensive summary before practicing with questions and flashcards.</p>
+
+    <!-- Topic Selection Dropdown -->
+    <button class="dropdown-btn" onclick="toggleSummaryDropdown()">📖 Select Topic</button>
+    <div class="summary-dropdown" id="summaryDropdown">
+        <a href="#" onclick="loadSummary('playwright')">🎭 Playwright</a>
+        <a href="#" onclick="loadSummary('python')">🐍 Python</a>
+        <a href="#" onclick="loadSummary('bash')">💻 Bash</a>
+        <a href="#" onclick="loadSummary('vim')">📝 Vim</a>
+        <a href="#" onclick="loadSummary('emacs')">🔧 Emacs</a>
+        <a href="#" onclick="loadSummary('git')">📚 Git</a>
+        <a href="#" onclick="loadSummary('sql')">🗄️ SQL</a>
+        <a href="#" onclick="loadSummary('networking')">🌐 Networking</a>
+        <a href="#" onclick="loadSummary('regular_expressions')">🔍 Regular Expressions</a>
+        <a href="#" onclick="loadSummary('electron')">⚡ Electron</a>
+        <a href="#" onclick="loadSummary('chrome_extensions')">🔌 Chrome Extensions</a>
+    </div>
+
+    <!-- Summary Content Area -->
+    <div id="summaryContent" class="summary-content">
+        <div class="summary-placeholder">
+            <h2>📖 Select a topic above to read its summary</h2>
+            <p>Summaries provide comprehensive overviews of each topic to help you understand the concepts before practicing with questions and flashcards.</p>
+        </div>
+    </div>
+</div>
+
+<script src="/shared.js"></script>
+<script src="/summaries.js"></script>
+</body>
+</html> 

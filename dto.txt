@@ -1,0 +1,26 @@
+
+================================================================================
+File: /Users/williamhall/Programing/LearningApp/src/main/java/com/william/LearningApp/dto/SimpleQuestion.java
+================================================================================
+package com.william.LearningApp.dto;
+
+public class SimpleQuestion {
+    private String text;
+    private String answerRegex;
+
+    public SimpleQuestion(String text, String answerRegex) {
+        this.text = text;
+        this.answerRegex = answerRegex;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public String getAnswerRegex() {
+        return answerRegex;
+    }
+}
+
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Learning</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="top-strip">
+    <a href="/practice-history">📜 Practice History</a>
+</div>
+<div class="general-sidebar">
+    <h2>Menu</h2>
+    <a href="/flashcards">📌 Flashcards</a>
+    <a href="/questions">❓ Questions</a>
+    <a href="/chatgpt-questions">🤖 ChatGPT Questions</a>
+    <a href="/summaries">📚 Summaries</a>
+    <a href="/german">🇩🇪 German</a>
+    <a href="/linux">🐧 Linux</a>
+</div>
+<div class="content">
+    <h1>🐧 Linux Learning</h1>
+    <p>Explore Linux concepts and commands!</p>
+
+    <!-- Sub-menu for Linux section -->
+    <div class="sub-menu">
+        <a href="/linux" class="sub-menu-item active">🃏 Flashcards</a>
+        <a href="/linux-questions" class="sub-menu-item">⌨️ Questions</a>
+    </div>
+
+    <!-- Dropdown to select Linux flashcard deck -->
+    <button class="dropdown-btn" onclick="toggleLinuxDropdown()">☰ Linux Categories</button>
+    <div class="topic-dropdown" id="linuxDropdown">
+        <a href="#" onclick="loadLinuxFlashcards('linux_basics')">🔰 Linux Basics</a>
+        <a href="#" onclick="loadLinuxFlashcards('linux_commands')">💻 Common Commands</a>
+        <a href="#" onclick="loadLinuxFlashcards('linux_advanced')">⚙️ Advanced Topics</a>
+    </div>
+
+    <div class="flashcard-container">
+        <div class="flashcard" id="linuxFlashcard">
+            <div class="flashcard-front" id="flashcardFront">Select a Linux category to begin</div>
+            <div class="flashcard-back" id="flashcardBack" style="display: none;"></div>
+        </div>
+        <div class="flashcard-controls">
+            <button id="showAnswerBtn" onclick="showLinuxAnswer()" style="display: none;">Show Answer</button>
+            <button id="nextBtn" onclick="nextLinuxFlashcard()" style="display: none;">Next Card</button>
+        </div>
+    </div>
+</div>
+<script src="/shared.js"></script>
+<script src="/linux.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+question,answerRegex,expectedDisplay
+What is the main object to launch a browser in Playwright?,.*playwright\.chromium.*playwright\.firefox.*playwright\.webkit.*,playwright.chromium
+How do you launch a browser?,.*const browser = await playwright\.chromium\.launch\(\).*,const browser = await playwright.chromium.launch();
+How do you open a new browser context?,.*const context = await browser\.newContext\(\).*,const context = await browser.newContext();
+How do you open a new page?,.*const page = await context\.newPage\(\).*,const page = await context.newPage();
+How do you navigate to a URL?,.*await page\.goto\(.*https.*\).*,await page.goto('https://example.com');
+How do you take a screenshot?,.*await page\.screenshot\(\{.*path.*\}\).*,await page.screenshot({ path: 'screenshot.png' });
+How do you get the text content of an element?,.*await page\.textContent\(.*selector.*\).*,await page.textContent('selector');
+How do you click a button?,.*await page\.click\(.*button.*\).*,await page.click('button#submit');
+How do you type into an input field?,.*await page\.fill\(.*input.*\).*,await page.fill('input#name', 'William');
+How do you wait for an element to be visible?,.*await page\.waitForSelector\(.*selector.*\).*,await page.waitForSelector('selector');
+How do you run a test in headless mode?,.*headless.*true.*,await browserType.launch({ headless: true });
+How do you emulate a mobile device?,.*browser\.newContext\(\{.*playwright\.devices.*\}\).*,Use browser.newContext({ ...playwright.devices['iPhone 12'] })
+How do you record a browser session?,.*npx playwright codegen.*,Use npx playwright codegen https://example.com
+How do you handle file uploads?,.*page\.setInputFiles\(.*input.*file.*\).*,Use page.setInputFiles('input[type=file]', 'file.txt')
+How do you intercept network requests?,.*page\.route\(.*route.*abort.*\).*,Use page.route('**/*', route => route.abort())
+How do you test for element visibility?,.*expect\(.*locator.*\)\.toBeVisible\(\).*,Use await expect(locator).toBeVisible()
+How do you close a browser?,.*await browser\.close\(\).*,await browser.close();
+How do you run all tests?,.*npx playwright test.*,npx playwright test
+What is Playwright Test?,.*built-in test runner.*end-to-end tests.*,A built-in test runner for writing end-to-end tests.
+How do you define a test in Playwright Test?,.*test\(.*description.*async.*page.*\).*,test('description', async ({ page }) => { ... });
+How do you group tests in Playwright?,.*test\.describe\(.*group name.*\).*,Use test.describe('group name', () => { ... })
+How do you run a single test?,.*npx playwright test.*tests.*spec.*,npx playwright test tests/my-test.spec.ts
+What's the difference between context and page?,.*Context.*browser profile.*pages.*tabs.*,Context is a browser profile; pages are tabs inside it.
+What is auto-waiting?,.*Playwright waits.*elements.*ready.*actions.*,Playwright waits for elements to be ready before performing actions.
+How do you run tests in parallel?,.*Playwright Test.*runs.*parallel.*default.*,Playwright Test runs files and tests in parallel by default.
+How do you set environment variables for tests?,.*\.env.*files.*CLI.*PWDEBUG.*,Use .env files or pass via CLI: PWDEBUG=1 npx playwright test
+How do you debug tests?,.*PWDEBUG.*page\.pause\(\).*,Use PWDEBUG=1 or await page.pause();
+What is the expect() function in Playwright Test?,.*assertions.*Jest.*,Used for assertions (similar to Jest).
+How do you install Playwright?,.*npm i -D @playwright/test.*npx playwright install.*,npm i -D @playwright/test && npx playwright install
+What browsers are bundled with Playwright?,.*Chromium.*Firefox.*WebKit.*,Chromium, Firefox, WebKit.
+How is Playwright different from Puppeteer?,.*more browsers.*native emulation.*built-in test runner.*,Supports more browsers and native emulation, built-in test runner.
+How do you set viewport size?,.*viewport.*width.*height.*newContext\(\).*,Pass { viewport: { width: 1280, height: 720 } } to newContext()
+How do you capture console logs?,.*page\.on\(.*console.*msg.*text.*\).*,Use page.on('console', msg => console.log(msg.text()))
+How do you wait for navigation?,.*await page\.waitForNavigation\(\).*,await page.waitForNavigation()
+What is page.locator()?,.*modern API.*find.*interact.*elements.*robustly.*,A modern API to find and interact with elements robustly.
+What is a fixture in Playwright Test?,.*reusable test setup.*login.*browser context.*,Reusable test setup like login, browser context, etc.
+How do you handle dialogs?,.*page\.on\(.*dialog.*dialog\.accept.*\).*,Use page.on('dialog', async dialog => { await dialog.accept(); })
+What is page.context() used for?,.*browser context.*owns.*page.*,Returns the browser context that owns the page.
+How do you run Playwright in CI?,.*install dependencies.*run tests.*CLI.*GitHub Actions.*,Install dependencies, run tests via CLI in GitHub Actions, GitLab, etc.
+How do you test across multiple devices?,.*projects.*config.*emulate devices.*iPhone.*Pixel.*,Use projects in config to emulate devices like iPhone, Pixel.
+How do you retry failed tests?,.*retries.*playwright\.config\.ts.*retries.*2.*,Configure retries in playwright.config.ts (e.g., retries: 2) 

@@ -1,0 +1,30 @@
+What is a Chrome extension?,A small software program that enhances Chrome's functionality and interacts with web pages or the browser itself.
+What is the required config file for every extension?,manifest.json
+Which manifest version is current?,Manifest V3 (MV3)
+What key in manifest.json defines permissions?,The "permissions" key
+What key specifies the background script?,"background": { "service_worker": "background.js" }
+How do you inject a script into a webpage?,Use the "content_scripts" section in manifest.json
+What key enables a browser action icon?,The "action" key (previously "browser_action" in MV2)
+What command opens the extension popup?,Clicking the extension icon in the toolbar
+How do you define a popup HTML file?,Use "default_popup" inside "action" in manifest.json
+Where should icons be defined?,Inside the "icons" key of manifest.json
+How do you define extension-wide settings?,Use "storage" with the chrome.storage API
+Which permission allows modifying web content?,"scripting" or "host_permissions"
+How do you send messages between scripts?,Use chrome.runtime.sendMessage() and onMessage listener
+Which function receives messages in background?,chrome.runtime.onMessage.addListener()
+What are content scripts?,JS files that run in the context of web pages
+Can content scripts access localStorage?,Yes — the page’s localStorage
+Can content scripts access chrome.* APIs?,No — only some (e.g., chrome.runtime), not all
+How do you debug a Chrome extension?,Use the Extensions page > Enable developer mode > Inspect views
+How do you reload an unpacked extension?,On the chrome://extensions page, click the reload icon
+Where do you load an unpacked extension?,chrome://extensions > "Load unpacked"
+How do you request a tab’s info?,Use chrome.tabs.query()
+How do you execute code in the current tab?,Use chrome.scripting.executeScript()
+What file defines permissions for `activeTab`?,manifest.json under "permissions": ["activeTab"]
+What is an event page (Manifest V2)?,A background page that unloads when idle
+What is a service worker in MV3?,A background script that runs in response to events
+How do you persist data across browser restarts?,Use chrome.storage.local
+How do you open a new tab programmatically?,Use chrome.tabs.create({ url: "..." })
+What is the maximum number of content scripts?,There is no strict limit, but performance matters
+What is `chrome.runtime.lastError` used for?,To check if an async API call failed
+How do you declare host access (e.g., example.com)?,Use "host_permissions" in manifest.json

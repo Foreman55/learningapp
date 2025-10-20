@@ -1,0 +1,20 @@
+How do you restrict permissions to only when needed?,Use "optional_permissions" and request them at runtime
+How do you request optional permissions at runtime?,Use chrome.permissions.request()
+How do you check granted permissions?,Use chrome.permissions.contains()
+How do you declare site access for content scripts?,Use "matches" in content_scripts and/or "host_permissions"
+What is the difference between permissions and host_permissions?,permissions is for APIs, host_permissions is for site access
+How do you enforce CSP?,Add "content_security_policy" to manifest.json
+How do you allow inline scripts in CSP (not recommended)?,Use 'unsafe-inline' in CSP string
+How do you set a custom icon for a specific size?,Use "icons": { "16": "icon16.png", "48": "icon48.png" }
+How do you support multiple languages?,Use "_locales" and __MSG_ tokens in manifest.json
+How do you detect manifest version?,"manifest_version": 3 or 2
+How do you conditionally inject based on URL?,Use declarativeContent.pageStateMatcher (MV2) or scripting
+How do you exclude a site from host_permissions?,You must use scripting logic — no built-in exclusion
+What is the minimum manifest.json for MV3?,{ "manifest_version": 3, "name": "...", "version": "1.0", "action": {}, "permissions": [] }
+How do you make a persistent background script?,Not allowed in MV3 — use service_worker
+How do you open the options page?,Use chrome.runtime.openOptionsPage()
+Where is the options UI defined?,In manifest.json under "options_page" or "options_ui"
+Can you dynamically change manifest at runtime?,No — it is static, must be rebuilt and reloaded
+What CSP is enforced by default?,script-src 'self'; object-src 'self'
+How do you increase version number?,Manually edit "version" in manifest.json
+Can you use ES modules in service_worker?,Yes, MV3 supports `"type": "module"` in background

@@ -1,0 +1,31 @@
+How do you open a file with Nano?,Use `nano filename`
+How do you create a new file in Nano?,Use `nano newfile`
+How do you save changes?,Press `Ctrl-O` (then Enter to confirm)
+How do you exit Nano?,Press `Ctrl-X`
+How do you exit without saving?,Press `Ctrl-X`, then `N` when prompted
+How do you cut a line?,Press `Ctrl-K`
+How do you paste a line?,Press `Ctrl-U`
+How do you copy a line?,Press `Alt-6`
+How do you move to the beginning of a line?,Press `Ctrl-A`
+How do you move to the end of a line?,Press `Ctrl-E`
+How do you move forward/back one character?,Use `Ctrl-F` / `Ctrl-B`
+How do you move up/down a line?,Use `Ctrl-P` / `Ctrl-N`
+How do you move forward/back one word?,Use `Ctrl-Space` / `Alt-Space` or arrow keys
+How do you search for text?,Press `Ctrl-W` and type the search term
+How do you repeat the last search?,Press `Ctrl-W` then `Enter`
+How do you replace text?,Press `Ctrl-\\`
+How do you enable soft line wrapping?,Use `nano -w` or press `Alt-L`
+How do you show line numbers?,Use `-c` or `Ctrl-C` to show cursor position
+How do you go to a specific line?,Press `Ctrl-_`, then enter line number
+How do you toggle help at the bottom?,Use `Ctrl-G` to show the help screen
+How do you toggle the mouse support?,Pass `--mouse` at launch or set in `.nanorc`
+How do you enable syntax highlighting?,Use `~/.nanorc` and include language configs
+How do you open multiple files?,Use `nano file1 file2 file3`
+How do you switch between files?,Press `Ctrl-X` then `N` when prompted, or launch with `-F`
+How do you cut multiple lines?,Use `Ctrl-K` multiple times or mark text first
+How do you mark text?,Press `Ctrl-^` then move the cursor
+How do you justify (reformat) text?,Press `Ctrl-J`
+How do you undo and redo?,Use `Alt-U` to undo and `Alt-E` to redo
+How do you view the version of Nano?,Use `nano --version`
+How do you launch Nano with restricted mode?,Use `nano -R`
+How do you backup a file before saving?,Use `nano -B`

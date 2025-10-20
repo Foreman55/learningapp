@@ -1,0 +1,26 @@
+How do you use alarms in Chrome extensions?,Use chrome.alarms.create() and chrome.alarms.onAlarm
+How do you schedule a periodic task?,Use chrome.alarms.create('name', { periodInMinutes: X })
+How do you open an offscreen document?,Use chrome.offscreen.createDocument()
+What is the purpose of offscreen documents?,Run background UI tasks like canvas or audio processing
+How do you send a message to a specific tab?,Use chrome.tabs.sendMessage(tabId, message)
+How do you listen for tab updates?,Use chrome.tabs.onUpdated.addListener()
+How do you detect when a tab is closed?,Use chrome.tabs.onRemoved.addListener()
+What permission is required to monitor tabs?,The "tabs" permission in manifest.json
+What are declarativeNetRequest rules used for?,To block, modify, or redirect requests declaratively
+How do you block requests to Facebook?,Use declarativeNetRequest with "urlFilter": "*://*.facebook.com/*"
+How do you intercept web requests?,Use chrome.webRequest.onBeforeRequest (MV2 only)
+What replaced webRequest blocking in MV3?,declarativeNetRequest API
+How do you access a tab’s DOM?,Inject a content script and run DOM methods
+How do you handle install/update events?,Use chrome.runtime.onInstalled.addListener()
+How do you listen to extension updates?,Also chrome.runtime.onInstalled() with reason "update"
+How do you remove context menu items?,Use chrome.contextMenus.removeAll()
+How do you create a context menu item?,Use chrome.contextMenus.create()
+Can background service workers access DOM?,No — only scripting and fetch, not window or document
+How do you limit extension to specific URLs?,Use "host_permissions" like ["*://*.example.com/*"]
+How do you access cookies?,Use chrome.cookies.get() with the "cookies" permission
+What replaces long-lived connections?,Use chrome.runtime.connect() and Port messaging
+How do you detect the current tab?,Use chrome.tabs.query({ active: true, currentWindow: true })
+How do you store sync settings?,Use chrome.storage.sync instead of local
+How do you throttle API calls in background?,Use setTimeout, alarms, or Debounce logic
+How do you debug service worker logs?,Go to chrome://extensions > Inspect service worker
+How do you detect incognito context?,Check chrome.extension.isAllowedIncognitoAccess()

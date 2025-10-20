@@ -1,0 +1,35 @@
+How do you open a file in Emacs?,`C-x C-f` (find-file)
+How do you save a file in Emacs?,`C-x C-s` (save-buffer)
+How do you quit Emacs?,`C-x C-c` (save-buffers-kill-terminal)
+How do you switch buffers?,`C-x b`
+How do you list all buffers?,`C-x C-b`
+How do you close a buffer?,`C-x k` (kill-buffer)
+How do you undo a change?,`C-/` or `C-x u`
+How do you redo a change?,Use undo-tree or press `C-g` then `C-/` repeatedly
+How do you move the cursor forward one character?,`C-f`
+How do you move the cursor backward one character?,`C-b`
+How do you move the cursor forward one word?,`M-f`
+How do you move the cursor backward one word?,`M-b`
+How do you move to the beginning of the line?,`C-a`
+How do you move to the end of the line?,`C-e`
+How do you move up one line?,`C-p`
+How do you move down one line?,`C-n`
+How do you move to the top of the buffer?,`M-<`
+How do you move to the bottom of the buffer?,`M->`
+How do you search forward in Emacs?,`C-s`
+How do you search backward in Emacs?,`C-r`
+How do you cut (kill) a line?,`C-k`
+How do you paste (yank) a line?,`C-y`
+How do you copy a region?,`M-w`
+How do you cut a region?,`C-w`
+How do you select a region?,Move cursor with `C-SPC` (set mark)
+How do you evaluate an elisp expression?,`M-:` then type the expression
+How do you open a terminal in Emacs?,`M-x term` or `M-x eshell`
+How do you open dired (file manager)?,`C-x d`
+How do you open help for a command?,`C-h f` then command name
+How do you describe a keybinding?,`C-h k` then press the key sequence
+How do you run a command by name?,`M-x`
+How do you repeat a command?,`C-x z`
+What is `C-g` used for?,Cancel current operation or exit prompt
+How do you record a macro?,`C-x (` to start, `C-x )` to end
+How do you run the last macro?,`C-x e`

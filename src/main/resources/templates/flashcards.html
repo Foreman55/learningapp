@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="top-strip">
+    <a href="/practice-history">📜 Practice History</a>
+</div>
+<div class="general-sidebar">
+    <h2>Menu</h2>
+    <a href="/flashcards">📌 Flashcards</a>
+    <a href="/questions">❓ Questions</a>
+    <a href="/chatgpt-questions">🤖 ChatGPT Questions</a>
+    <a href="/summaries">📚 Summaries</a>
+    <a href="/german">🇩🇪 German</a>
+    <a href="/linux">🐧 Linux</a>
+</div>
+<div class="content">
+    <h1>📌 Flashcards</h1>
+
+    <!-- Dropdown to select deck -->
+    <button class="dropdown-btn" onclick="toggleDropdown()">☰ Decks</button>
+    <div class="topic-dropdown" id="topicDropdown">
+        <a href="#" onclick="loadFlashcards('chinese_radicals')">Chinese Symbols</a>
+        <a href="#" onclick="loadFlashcards('playwright')">Playwright</a>
+        <a href="#" onclick="loadFlashcards('emacs')">emacs</a>
+        <a href="#" onclick="loadFlashcards('emacs2')">Emacs 2 (Advanced)</a>
+        <a href="#" onclick="loadFlashcards('nano')">Nano</a>
+        <a href="#" onclick="loadFlashcards('vim')">Vim</a>
+        <a href="#" onclick="loadFlashcards('vim2')">Vim 2 (Advanced)</a>
+        <a href="#" onclick="loadFlashcards('bash')">Bash </a>
+        <a href="#" onclick="loadFlashcards('chrome_extensions')">Chrome Extensions</a>
+        <a href="#" onclick="loadFlashcards('chrome_extensions2')">Chrome Extensions 2</a>
+        <a href="#" onclick="loadFlashcards('chrome_manifest_tricks')">Manifest Tricks</a>
+        <a href="#" onclick="loadFlashcards('electron_browser')">Electron Browser</a>
+        <a href="#" onclick="loadFlashcards('electron_security')">Electron Security</a>
+        <a href="#" onclick="loadFlashcards('electron_modules')">Electron Modules</a>
+    </div>
+
+    <!-- Flashcard area -->
+    <div id="flashcardBox" class="flashcards-section">
+        <div id="flashcardFront">Select a deck to begin</div>
+        <div id="flashcardBack" style="display: none;"></div>
+    </div>
+
+    <!-- Flashcard Controls -->
+    <div class="button-group">
+        <button onclick="flipFlashcard()">🔄 Flip</button>
+        <button onclick="nextFlashcard()">➡️ Next</button>
+    </div>
+
+    <!-- Self Evaluation -->
+    <div class="button-group" style="margin-top: 20px; flex-direction: column; align-items: flex-start;">
+        <label>Self-evaluate:</label>
+        <button onclick="rateFlashcard('correct')">✅ I got it</button>
+        <button onclick="rateFlashcard('unsure')">🤔 Not sure</button>
+        <button onclick="rateFlashcard('wrong')">❌ I didn’t get it</button>
+    </div>
+</div>
+<script src="/shared.js"></script>
+<script src="/flashcards.js"></script>
+</body>
+</html>

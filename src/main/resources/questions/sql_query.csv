@@ -1,0 +1,6 @@
+question,expectedQuery
+List all users.,SELECT * FROM users;
+List all orders over $50.,SELECT * FROM orders WHERE amount > 50;
+List user names and product names.,SELECT users.name, orders.product FROM users JOIN orders ON users.id = orders.user_id;
+List names of users who ordered a Pen.,SELECT name FROM users JOIN orders ON users.id = orders.user_id WHERE product = 'Pen';
+List all users and their total amount spent.,SELECT users.name, SUM(orders.amount) FROM users JOIN orders ON users.id = orders.user_id GROUP BY users.name;

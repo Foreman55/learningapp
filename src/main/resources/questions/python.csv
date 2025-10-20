@@ -1,0 +1,24 @@
+question,answerRegex,expectedDisplay
+Get user input and store it in a variable `name`.,^\s*name\s*=\s*input\(\s*.*\s*\)\s*$,name = input()
+If x equals 10, print "OK".,^\s*if\s*x\s*==\s*10\s*:\s*print\(\s*["']OK["']\s*\)\s*$,if x == 10: print("OK")
+Loop through numbers 0 to 4.,^\s*for\s+\w+\s+in\s+range\(5\):\s*$,for i in range(5):
+Create a function called `greet`.,^\s*def\s+greet\(\s*\)\s*:\s*$,def greet():
+Add "apple" to a list called `fruits`.,^\s*fruits\.append\(\s*["']apple["']\s*\)\s*$,fruits.append("apple")
+Remove "banana" from a list called `fruits`.,^\s*fruits\.remove\(\s*["']banana["']\s*\)\s*$,fruits.remove("banana")
+Print the first item in a list called `items`.,^\s*print\(\s*items\[0\]\s*\)\s*$,print(items[0])
+Create a dictionary with name "Alice" and age 30.,^\s*{\s*["']name["']\s*:\s*["']Alice["'],\s*["']age["']\s*:\s*30\s*}\s*$,{"name": "Alice", "age": 30}
+Access the "name" value in a dictionary called `person`.,^\s*person\[\s*["']name["']\s*\]\s*$,person["name"]
+Create a tuple with values 1, 2, and 3.,^\s*\(1,\s*2,\s*3\)\s*$,(1, 2, 3)
+Create a set with items 1 and 2.,^\s*{1,\s*2}\s*$|^\s*set\(\s*\[?1,\s*2\]?\s*\)\s*$,{1, 2}
+Use list comprehension to square numbers 0 to 4.,^\s*\[\s*\w+\s*\*\*2\s+for\s+\w+\s+in\s+range\(5\)\s*\]\s*$,[x**2 for x in range(5)]
+Import the math module.,^\s*import\s+math\s*$,import math
+Get the square root of 16 using math.,^\s*math\.sqrt\(16\)\s*$,math.sqrt(16)
+Write "Hello" to a file.,^\s*open\(.+w.+\)\.write\(\s*["']Hello["']\s*\)\s*$,open("file.txt", "w").write("Hello")
+Read from a file.,^\s*open\(.+r.+\)\.read\(\)\s*$,open("file.txt", "r").read()
+Print the length of a list called `mylist`.,^\s*print\(\s*len\(mylist\)\s*\)\s*$,print(len(mylist))
+Convert the string `"5"` to an integer.,^\s*int\(\s*["']5["']\s*\)\s*$,int("5")
+Get the last item in a list `nums`.,^\s*nums\[-1\]\s*$,nums[-1]
+Slice `mylist` to get the first three items.,^\s*mylist\[:3\]\s*$,mylist[:3]
+Use `enumerate()` on a list.,^\s*enumerate\(.*\)\s*$,enumerate(mylist)
+Use `zip()` on two lists.,^\s*zip\(.*\)\s*$,zip(list1, list2)
+Create a lambda function that adds 2.,^\s*lambda\s+\w+\s*:\s*\w+\s*\+\s*2\s*$,lambda x: x + 2

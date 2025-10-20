@@ -1,0 +1,12 @@
+question,answerRegex,expectedDisplay
+der Paragraphenreiter,^stickler for rules$,"stickler for rules"
+der Korinthenkacker,^pedant, nitpicker$,"pedant, nitpicker"
+der Klugscheißer,^smart-ass, know-it-all$,"smart-ass, know-it-all"
+die Tratschtante,^gossip, chatterbox$,"gossip, chatterbox"
+der Wichtigtuer,^self-important person$,"self-important person"
+Verpetzen,^to snitch$,"to snitch"
+Anschwärzen,^to denounce$,"to denounce"
+Bloßstellen,^to expose publicly$,"to expose publicly"
+Vorbild,^role model$,"role model"
+Abbild,^image, reflection$,"image, reflection"
+

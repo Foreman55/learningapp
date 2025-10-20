@@ -1,0 +1,21 @@
+What is context isolation in Electron?,A security feature that separates the renderer's global scope from Electron/Node.js APIs.
+How do you enable context isolation?,Set contextIsolation: true in BrowserWindow webPreferences.
+Why is nodeIntegration dangerous?,It gives full Node.js access in the renderer, which can be exploited by malicious content.
+How do you securely expose functions to the renderer?,Use contextBridge.exposeInMainWorld() inside a preload script.
+Can you access Node APIs directly in a sandboxed renderer?,No — sandboxing prevents direct Node.js access.
+What is the purpose of a preload script?,To safely expose limited APIs from the main process to the renderer.
+How do you disable remote module for security?,Set enableRemoteModule: false in BrowserWindow webPreferences.
+How do you restrict navigation to trusted URLs?,Use webContents.setWindowOpenHandler and will-navigate event to filter destinations.
+How do you prevent unintended window creation?,Use webPreferences: { nativeWindowOpen: false } and block new-window events.
+How do you prevent XSS in Electron apps?,Use context isolation, no nodeIntegration, strong CSP headers, and sanitized input.
+Where should you avoid using user-controlled input?,In loadURL(), shell.openExternal(), exec(), eval(), or direct file access.
+What is a secure way to load external content?,Avoid it. If unavoidable, sanitize it and use context isolation + sandboxing.
+What is the default value of contextIsolation in Electron 20+?,true
+Can preload scripts access the DOM?,No — preload runs in a separate context from the document.
+What is the main danger of improper IPC?,Privilege escalation: malicious renderer code calling sensitive main functions.
+How do you validate IPC messages?,Use strict channel names, data validation, and minimal API surface.
+What is sandbox: true used for?,It enables Chromium's built-in sandbox in the renderer.
+What happens if contextIsolation is false?,The renderer can access all globals from preload and potentially Node.js, creating security risk.
+Should you use eval() in the renderer?,No — it introduces severe code injection risks.
+How do you enforce a Content Security Policy (CSP)?,Set the CSP in meta tags or HTTP headers (e.g., script-src 'self').
+How do you prevent drag-and-drop attacks?,Disable file:// handling or sanitize drop handlers in the renderer.

@@ -1,0 +1,31 @@
+question,answerRegex
+How do you initialize a new Git repository?,(?i).*git.*init.*
+How do you check the status of your working directory?,(?i).*git.*status.*
+How do you stage a file named `index.html`?,(?i).*git.*add.*index\.html.*
+How do you stage all changed files?,(?i).*git.*add.*-A.*|.*git.*add.*\.*
+How do you commit staged changes with the message "initial commit"?,(?i).*git.*commit.*-m.*initial.*
+How do you amend the last commit?,(?i).*git.*commit.*--amend.*
+How do you view your commit history?,(?i).*git.*log.*
+How do you see a summarized commit graph?,(?i).*git.*log.*--oneline.*
+How do you view remote repositories?,(?i).*git.*remote.*
+How do you add a remote named `origin`?,(?i).*git.*remote.*add.*origin.*
+How do you create a new branch named `feature`?,(?i).*git.*branch.*feature.*
+How do you switch to a branch named `main`?,(?i).*git.*checkout.*main.*
+How do you create and switch to a new branch `dev`?,(?i).*git.*checkout.*-b.*dev.*
+How do you list all branches?,(?i).*git.*branch.*
+How do you delete a branch named `bugfix`?,(?i).*git.*branch.*-d.*bugfix.*
+How do you rename a branch to `new-name`?,(?i).*git.*branch.*-m.*new-name.*
+How do you merge a branch named `feature` into the current branch?,(?i).*git.*merge.*feature.*
+How do you abort a merge conflict?,(?i).*git.*merge.*--abort.*
+How do you stash changes temporarily?,(?i).*git.*stash.*
+How do you apply stashed changes?,(?i).*git.*stash.*apply.*
+How do you delete all stashes?,(?i).*git.*stash.*clear.*
+How do you push changes to `origin` on branch `main`?,(?i).*git.*push.*origin.*main.*
+How do you set upstream branch when pushing?,(?i).*git.*push.*--set-upstream.*
+How do you pull the latest changes from remote?,(?i).*git.*pull.*
+How do you clone a repository from a URL?,(?i).*git.*clone.*https?.*
+How do you show differences between working directory and last commit?,(?i).*git.*diff.*
+How do you show diff between two commits?,(?i).*git.*diff.*[a-f0-9]{7}.*[a-f0-9]{7}.*
+How do you discard changes to a file named `main.js`?,(?i).*git.*checkout.*--.*main\.js.*
+How do you reset the last commit but keep changes?,(?i).*git.*reset.*--soft.*
+How do you remove the last commit completely?,(?i).*git.*reset.*--hard.*

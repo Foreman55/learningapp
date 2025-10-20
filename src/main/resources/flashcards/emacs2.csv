@@ -1,0 +1,36 @@
+How do you create a heading in Org-mode?,Start a line with `* ` followed by your heading.
+How do you toggle TODO status in Org-mode?,`C-c C-t`
+How do you schedule a task in Org-mode?,`C-c C-s`
+How do you set a deadline in Org-mode?,`C-c C-d`
+How do you open the Org agenda view?,`C-c a a`
+How do you insert a new checkbox?,`M-S-RET`
+How do you collapse or expand an Org section?,`TAB` on the heading line
+How do you open your Emacs init file?,`C-x C-f ~/.emacs.d/init.el`
+How do you evaluate the entire buffer?,`M-x eval-buffer`
+How do you install a new package?,`M-x package-install`
+How do you refresh the package list?,`M-x package-refresh-contents`
+What is the purpose of `use-package`?,Declarative macro for cleaner package configuration
+What does `setq` do?,Sets the value of a variable
+What does `defun` do?,Defines a new function
+How do you evaluate a region of Elisp?,Select region → `M-x eval-region`
+How do you describe a variable?,`C-h v`
+How do you describe a function?,`C-h f`
+How do you record a keyboard macro?,`C-x (`, then do actions, then `C-x )`
+How do you replay the last macro?,`C-x e`
+How do you save a macro to use later?,Give it a name with `M-x name-last-kbd-macro`
+How do you open Magit?,`M-x magit-status`
+How do you stage changes in Magit?,Press `s` on the file
+How do you commit in Magit?,Press `c c`, write message, then `C-c C-c`
+What is TRAMP?,Tool for editing remote files over SSH in Emacs
+How do you open a remote file with TRAMP?,`C-x C-f /ssh:user@host:/path/to/file`
+How do you store content in a register?,`C-x r s <letter>`
+How do you insert content from a register?,`C-x r i <letter>`
+How do you copy a rectangle?,Use `C-SPC` to select → `C-x r M-w`
+How do you delete a rectangle?,Use `C-SPC` to select → `C-x r d`
+How do you insert a rectangle?,Move point → `C-x r y`
+What does `C-u` do?,Provides a numeric prefix argument (e.g. repeat 5 times)
+How do you move back through the mark ring?,`C-u C-SPC`
+How do you comment a region?,Select it → `M-;`
+How do you reindent a region?,Select it → `C-M-\\`
+How do you jump to a symbol/function in a file?,`M-x imenu`
+How do you search across files in a project?,`M-x rgrep` or `M-x projectile-ripgrep`

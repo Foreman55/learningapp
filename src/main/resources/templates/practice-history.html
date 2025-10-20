@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice History</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- Top Navigation Strip -->
+<div class="top-strip">
+    <a href="/practice-history">📜 Practice History</a>
+</div>
+
+<!-- Sidebar -->
+<div class="general-sidebar">
+    <h2>Menu</h2>
+    <a href="/flashcards">📌 Flashcards</a>
+    <a href="/questions">❓ Questions</a>
+    <a href="/chatgpt-questions">🤖 ChatGPT Questions</a>
+    <a href="/summaries">📚 Summaries</a>
+    <a href="/german">🇩🇪 German</a>
+    <a href="/linux">🐧 Linux</a>
+</div>
+
+<!-- Main Content -->
+<div class="content">
+    <h1>📜 Practice History</h1>
+    <div id="historyBox">Loading practice history...</div>
+</div>
+
+<script src="/shared.js"></script>
+<script>
+    // Automatically fetch practice history on load
+    document.addEventListener("DOMContentLoaded", function () {
+        fetchPracticeHistory();
+    });
+</script>
+
+</body>
+</html>

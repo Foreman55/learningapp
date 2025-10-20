@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Questions</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="top-strip">
+    <a href="/practice-history">📜 Practice History</a>
+</div>
+
+<div class="general-sidebar">
+    <h2>Menu</h2>
+    <a href="/flashcards">📌 Flashcards</a>
+    <a href="/questions">❓ Questions</a>
+    <a href="/chatgpt-questions">🤖 ChatGPT Questions</a>
+    <a href="/summaries">📚 Summaries</a>
+    <a href="/german">🇩🇪 German</a>
+    <a href="/linux">🐧 Linux</a>
+</div>
+
+<div class="content">
+    <h1>Linux Questions</h1>
+    <input type="text" id="topic" placeholder="Topic" readonly>
+
+    <h2>Question</h2>
+    <div id="questionBox">Loading…</div>
+
+    <h2>Your Answer:</h2>
+    <textarea id="answer" placeholder="Type your answer here..."></textarea>
+    <input type="hidden" id="expectedAnswer">
+    <button onclick="submitAnswer()">Submit Answer</button>
+        <div id="evaluateResult"></div>
+
+        <!-- Stack pagination controls -->
+        <div id="stackControls" style="margin: 12px 0; display: flex; flex-wrap: wrap; gap: 8px;"></div>
+
+        <!-- Linux-only topic picker -->
+    <button class="dropdown-btn" style="margin-top:12px;" onclick="(function(){const d=document.getElementById('linuxTopicMenu');d.style.display=d.style.display==='flex'?'none':'flex';})();">☰ Linux Categories</button>
+    <div class="topic-dropdown" id="linuxTopicMenu" style="display:none;">
+        <a href="#" onclick="loadQuestions('linux_commands')">Core Terminal Basics</a>
+        <a href="#" onclick="loadQuestions('linux_system')">Linux Administration</a>
+            <a href="#" onclick="loadQuestions('linux/macos_basics')">macOS Terminal Tools</a>
+        <a href="#" onclick="loadQuestions('linux_networking')">Networking & Package Tools</a>
+        <a href="#" onclick="loadQuestions('linux_text_processing')">Text Processing & Scripting</a>
+            <a href="#" onclick="loadQuestions('linux/powershell')">PowerShell / Windows Terminal</a>
+    </div>
+
+    <!-- Stack pagination controls -->
+    <div id="stackControls" style="margin: 12px 0; display: flex; flex-wrap: wrap; gap: 8px;"></div>
+
+    <div>
+        <h3>Stats</h3>
+        ✅ Correct: <span id="correctCount">0</span> |
+        ❌ Wrong: <span id="wrongCount">0</span>
+    </div>
+</div>
+
+<script src="/shared.js"></script>
+<script src="/questions.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+question,answerRegex,expectedDisplay
+Ernüchterung,^disillusionment$,"disillusionment"
+Entschlossenheit,^determination$,"determination"
+Ehrfurcht,^awe, reverence$,"awe, reverence"
+Blamage,^embarrassment$,"embarrassment"
+Courage,^courage, moral strength$,"courage, moral strength"
+salopp,^casual, informal$,"casual, informal"
+armselig,^miserable, pathetic$,"miserable, pathetic"
+verlangen,^to demand$,"to demand"
+vertragen,^to tolerate$,"to tolerate"
+ertragen,^to endure$,"to endure"
+

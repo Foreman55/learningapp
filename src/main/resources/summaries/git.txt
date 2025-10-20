@@ -1,0 +1,837 @@
+Git Summary
+
+Git is a distributed VCS. Core: clone, branch, add, commit, merge, rebase, stash, push, pull, fetch, tag. Use feature branches, clear messages, small commits, pull before push, and PRs for review.
+Absolutely — here’s the **complete, expanded Git tutorial and summary**, written in the same readable `.txt` format style as the Electron one.
+This version goes deep: all major Git concepts, command explanations, internal mechanisms, GitHub integration, branching models, advanced operations, and professional best practices.
+It’s long, but comprehensive — ready to copy into your summaries system or save as `git.txt`.
+
+---
+
+# 📚 Git – Complete Tutorial and Summary
+
+## What Is Git?
+
+Git is a **distributed version control system (DVCS)** created by Linus Torvalds in 2005 to manage the Linux kernel.
+It tracks changes to files over time, lets multiple people collaborate on the same codebase, and provides a full history of every modification ever made.
+
+Git is **fast, decentralized, and secure**, with each user having a complete local copy of the entire repository — including all branches, commits, and history.
+
+---
+
+## Core Concepts
+
+* **Repository (repo):** A directory that Git tracks, containing your files and a hidden `.git` folder.
+* **Commit:** A snapshot of your project at a specific moment.
+* **Branch:** A line of development that diverges from another.
+* **Merge:** Combines different branches together.
+* **Remote:** A copy of your repository stored elsewhere (e.g., on GitHub or a server).
+* **Clone:** A complete local copy of a remote repository.
+* **HEAD:** A pointer to your current branch or commit.
+
+---
+
+## Why Use Git?
+
+* Full version history and rollback.
+* Safe experimentation via branches.
+* Collaboration across distributed teams.
+* Integration with CI/CD tools like GitHub Actions.
+* Works both offline and online.
+* Cryptographic integrity: every commit is verified with a SHA-1/SHA-256 hash.
+
+---
+
+## Installing Git
+
+### macOS
+
+```
+brew install git
+```
+
+### Linux
+
+```
+sudo apt install git
+```
+
+### Windows
+
+Download from: [https://git-scm.com/download/win](https://git-scm.com/download/win)
+
+---
+
+## Configuring Git
+
+Before your first commit, set up your identity:
+
+```
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+
+Optional preferences:
+
+```
+git config --global color.ui auto
+git config --global core.editor "code --wait"
+git config --global init.defaultBranch main
+```
+
+View all configuration:
+
+```
+git config --list
+```
+
+---
+
+## Initializing and Cloning
+
+Create a new repository:
+
+```
+git init
+```
+
+Clone an existing remote repository:
+
+```
+git clone https://github.com/username/repo.git
+```
+
+Clone into a specific folder:
+
+```
+git clone https://github.com/username/repo.git myfolder
+```
+
+---
+
+## Repository Structure
+
+After `git init`, Git creates a `.git` directory that contains:
+
+* `HEAD` — pointer to your current branch.
+* `config` — repository-specific configuration.
+* `refs/` — contains references to branches and tags.
+* `objects/` — stores commit objects and file versions.
+* `index` — staging area (index of next commit).
+
+---
+
+## Tracking Files
+
+### Add files to staging area
+
+```
+git add file.txt
+git add .
+```
+
+### Remove from staging area
+
+```
+git reset file.txt
+```
+
+### See current status
+
+```
+git status
+```
+
+---
+
+## Committing Changes
+
+### Commit staged changes
+
+```
+git commit -m "Describe what you changed"
+```
+
+### Commit all tracked changes (skip staging)
+
+```
+git commit -am "Quick commit"
+```
+
+### Amend last commit
+
+```
+git commit --amend
+```
+
+---
+
+## Viewing History
+
+```
+git log
+```
+
+Compact format:
+
+```
+git log --oneline
+```
+
+Graph view:
+
+```
+git log --graph --decorate --all
+```
+
+Show file changes:
+
+```
+git log -p file.txt
+```
+
+---
+
+## Inspecting Changes
+
+Show unstaged changes:
+
+```
+git diff
+```
+
+Show staged changes:
+
+```
+git diff --cached
+```
+
+Compare branches:
+
+```
+git diff main..feature
+```
+
+Compare any two commits:
+
+```
+git diff commit1 commit2
+```
+
+---
+
+## Branching
+
+List branches:
+
+```
+git branch
+```
+
+Create a branch:
+
+```
+git branch feature-login
+```
+
+Switch branches:
+
+```
+git checkout feature-login
+```
+
+Create and switch in one step:
+
+```
+git checkout -b feature-login
+```
+
+Delete a branch:
+
+```
+git branch -d feature-login
+```
+
+Rename branch:
+
+```
+git branch -m old-name new-name
+```
+
+---
+
+## Merging Branches
+
+Switch to main:
+
+```
+git checkout main
+```
+
+Merge another branch into it:
+
+```
+git merge feature-login
+```
+
+Fast-forward merge (linear history):
+
+```
+git merge --ff-only feature-login
+```
+
+If there are conflicts, Git will mark them in files:
+
+```
+<<<<<<< HEAD
+current branch code
+=======
+other branch code
+>>>>>>> feature-login
+```
+
+Resolve manually, then:
+
+```
+git add .
+git commit
+```
+
+---
+
+## Rebasing
+
+Reapply commits on top of another base branch:
+
+```
+git checkout feature
+git rebase main
+```
+
+Abort rebase:
+
+```
+git rebase --abort
+```
+
+Interactive rebase (reorder, squash, edit commits):
+
+```
+git rebase -i HEAD~5
+```
+
+---
+
+## Remote Repositories
+
+Add a remote:
+
+```
+git remote add origin https://github.com/username/repo.git
+```
+
+View remotes:
+
+```
+git remote -v
+```
+
+Remove a remote:
+
+```
+git remote remove origin
+```
+
+Rename a remote:
+
+```
+git remote rename origin upstream
+```
+
+---
+
+## Pushing and Pulling
+
+Push branch to remote:
+
+```
+git push origin main
+```
+
+Push all branches:
+
+```
+git push --all
+```
+
+Set upstream branch:
+
+```
+git push -u origin main
+```
+
+Fetch new commits (does not merge):
+
+```
+git fetch
+```
+
+Pull (fetch + merge):
+
+```
+git pull
+```
+
+Pull with rebase:
+
+```
+git pull --rebase
+```
+
+---
+
+## Tags (Versions)
+
+Create a lightweight tag:
+
+```
+git tag v1.0
+```
+
+Annotated tag (with message):
+
+```
+git tag -a v1.0 -m "Version 1.0 release"
+```
+
+View tags:
+
+```
+git tag
+```
+
+Push tags to remote:
+
+```
+git push --tags
+```
+
+Delete a tag:
+
+```
+git tag -d v1.0
+```
+
+---
+
+## Stashing (Temporary Save)
+
+Save work-in-progress:
+
+```
+git stash
+```
+
+List stashes:
+
+```
+git stash list
+```
+
+Reapply last stash:
+
+```
+git stash apply
+```
+
+Reapply and delete:
+
+```
+git stash pop
+```
+
+Drop all stashes:
+
+```
+git stash clear
+```
+
+---
+
+## Undoing Changes
+
+Unstage file:
+
+```
+git reset HEAD file.txt
+```
+
+Discard local changes:
+
+```
+git checkout -- file.txt
+```
+
+Reset to last commit:
+
+```
+git reset --hard
+```
+
+Reset to specific commit:
+
+```
+git reset --hard <commit-hash>
+```
+
+Revert a commit (creates a new inverse commit):
+
+```
+git revert <commit-hash>
+```
+
+---
+
+## Cleaning Up
+
+Remove untracked files:
+
+```
+git clean -f
+```
+
+Remove untracked directories:
+
+```
+git clean -fd
+```
+
+---
+
+## Collaboration Workflow with GitHub
+
+1. **Fork** a repository on GitHub to your account.
+2. **Clone** your fork locally:
+
+   ```
+   git clone https://github.com/yourname/project.git
+   ```
+3. **Create a feature branch:**
+
+   ```
+   git checkout -b feature/awesome-feature
+   ```
+4. **Commit and push your changes:**
+
+   ```
+   git add .
+   git commit -m "Add awesome feature"
+   git push origin feature/awesome-feature
+   ```
+5. **Open a Pull Request (PR)** on GitHub.
+6. Collaborators **review, comment, and merge** your PR.
+
+---
+
+## SSH and Authentication
+
+Generate a key:
+
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+Add to GitHub:
+
+* Copy `~/.ssh/id_rsa.pub`
+* Paste into GitHub → Settings → SSH keys
+
+Test connection:
+
+```
+ssh -T git@github.com
+```
+
+Use SSH URL:
+
+```
+git clone git@github.com:username/repo.git
+```
+
+---
+
+## Git Ignore
+
+Tell Git which files to skip:
+
+**.gitignore example:**
+
+```
+node_modules/
+*.log
+.env
+.DS_Store
+build/
+```
+
+Apply retrospectively:
+
+```
+git rm -r --cached .
+git add .
+git commit -m "Apply .gitignore"
+```
+
+---
+
+## Cherry-Picking
+
+Apply specific commits from one branch to another:
+
+```
+git cherry-pick <commit-hash>
+```
+
+Abort cherry-pick:
+
+```
+git cherry-pick --abort
+```
+
+---
+
+## Submodules
+
+Include another Git repo inside your project:
+
+```
+git submodule add https://github.com/example/library.git libs/library
+```
+
+Initialize submodules:
+
+```
+git submodule update --init
+```
+
+Pull updates for submodules:
+
+```
+git submodule update --remote
+```
+
+---
+
+## Bisect (Find Bug Commits)
+
+Binary search to find which commit introduced a bug:
+
+```
+git bisect start
+git bisect bad
+git bisect good <commit-hash>
+```
+
+Git will check out different commits for testing.
+When found:
+
+```
+git bisect reset
+```
+
+---
+
+## Hooks
+
+Git hooks are scripts that run automatically at certain events (like commit or push).
+
+Common hooks:
+
+* `pre-commit` — runs before committing (linting/tests)
+* `commit-msg` — validates commit messages
+* `pre-push` — runs before pushing
+
+Located in:
+
+```
+.git/hooks/
+```
+
+Enable a hook by removing `.sample` and making it executable:
+
+```
+chmod +x .git/hooks/pre-commit
+```
+
+---
+
+## Aliases
+
+Speed up common commands:
+
+```
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.lg "log --oneline --graph --decorate --all"
+```
+
+Now you can run:
+
+```
+git st
+git ci -m "Quick message"
+```
+
+---
+
+## Reflog and Recovery
+
+Git remembers all changes, even those “deleted.”
+
+View reference log:
+
+```
+git reflog
+```
+
+Restore lost commit:
+
+```
+git checkout <commit-hash>
+```
+
+---
+
+## Detached HEAD State
+
+When you check out a specific commit (not a branch):
+
+```
+git checkout <commit-hash>
+```
+
+You can inspect, but new commits aren’t saved to a branch.
+To return:
+
+```
+git checkout main
+```
+
+---
+
+## Advanced: Git Internals
+
+* **Commits** are immutable snapshots linked by parent hashes.
+* **Branches** are lightweight pointers to commits.
+* **Tags** are fixed pointers to commits.
+* **HEAD** points to the current branch.
+* **Objects** (blobs, trees, commits, tags) are stored as SHA-1 hashes.
+
+Git is a **content-addressable filesystem** — every version is stored by hash rather than file name.
+
+---
+
+## Best Practices
+
+1. Commit often, but keep commits small and focused.
+2. Write clear, meaningful commit messages.
+3. Keep your main branch stable and deployable.
+4. Use feature branches for new work.
+5. Always pull or fetch before pushing.
+6. Avoid force-pushing shared branches.
+7. Use `.gitignore` to prevent junk files.
+8. Tag releases consistently (e.g., `v1.0.0`).
+9. Rebase only your own work; merge shared branches.
+10. Back up remotes (e.g., GitHub, GitLab).
+
+---
+
+## Branching Strategies
+
+### Git Flow
+
+* `main` – production
+* `develop` – integration
+* `feature/*` – new features
+* `release/*` – pre-release testing
+* `hotfix/*` – urgent fixes
+
+### GitHub Flow
+
+Simpler model:
+
+* Always branch off `main`
+* Open a pull request early
+* Review and merge via PR
+* Deploy immediately
+
+---
+
+## GitHub Integration
+
+* **GitHub** is a cloud-based hosting platform for Git repositories.
+* Provides issue tracking, pull requests, wikis, and CI/CD via **GitHub Actions**.
+* You can:
+
+  * Host your repos
+  * Manage collaboration
+  * Automate builds and tests
+  * Manage releases and changelogs
+
+Push to GitHub:
+
+```
+git remote add origin https://github.com/username/repo.git
+git push -u origin main
+```
+
+---
+
+## Tagging and Releases on GitHub
+
+1. Create a local tag:
+
+   ```
+   git tag -a v1.0.0 -m "Stable release"
+   git push origin v1.0.0
+   ```
+2. On GitHub, go to **Releases → Draft a new release**.
+3. Attach compiled binaries, changelog, etc.
+
+---
+
+## Git Tools and Ecosystem
+
+* **GitHub Desktop** — GUI for Git and GitHub.
+* **SourceTree / GitKraken** — visual tools for complex repos.
+* **GitLens** (VS Code extension) — inline history and blame.
+* **GitHub CLI** — `gh` for managing repos and PRs via command line.
+
+---
+
+## Troubleshooting Common Problems
+
+| Problem              | Fix                                             |
+| -------------------- | ----------------------------------------------- |
+| Merge conflicts      | Manually edit conflict markers, add, and commit |
+| Rejected push        | `git pull --rebase` before pushing              |
+| Detached HEAD        | `git checkout main`                             |
+| Wrong commit message | `git commit --amend`                            |
+| Deleted branch       | Restore via `git reflog`                        |
+
+---
+
+## Summary
+
+Git is the backbone of modern software development.
+It gives you **complete history, branching freedom, collaboration**, and the power to safely experiment.
+
+GitHub (and similar platforms) extend this by adding **cloud sync, collaboration, pull requests, and CI/CD** — turning local version control into global teamwork.
+
+If you master Git, you master one of the most important tools in all of programming.
+
+---
+
+Would you like me to extend this Git tutorial with an **"Advanced Appendix"** section — covering patch creation, rebasing interactive conflicts, GPG signing, and CI/CD with GitHub Actions?
+It would make it a near-reference-grade guide for your Learning App’s Git section.

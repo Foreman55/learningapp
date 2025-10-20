@@ -1,0 +1,43 @@
+How do you enter insert mode?,Press `i`
+How do you return to normal mode?,Press `Esc`
+How do you save a file?,Type `:w`
+How do you quit Vim?,Type `:q`
+How do you save and quit?,Type `:wq` or `ZZ`
+How do you quit without saving?,Type `:q!`
+How do you move the cursor left/right?,Use `h` and `l`
+How do you move the cursor up/down?,Use `k` and `j`
+How do you move forward/backward by word?,Use `w` and `b`
+How do you move to the start of the line?,Use `0`
+How do you move to the end of the line?,Use `$`
+How do you search forward for a word?,Use `/word`
+How do you search backward for a word?,Use `?word`
+How do you repeat the last search?,Use `n` (forward) or `N` (reverse)
+How do you delete a character?,Use `x`
+How do you delete a word?,Use `dw`
+How do you delete a line?,Use `dd`
+How do you undo a change?,Use `u`
+How do you redo a change?,Use `Ctrl-r`
+How do you copy a line (yank)?,Use `yy`
+How do you paste below?,Use `p`
+How do you paste above?,Use `P`
+How do you select text in visual mode?,Press `v` (character) or `V` (line) or `Ctrl-v` (block)
+How do you indent a line?,Use `>>`
+How do you unindent a line?,Use `<<`
+How do you open a new line below?,Use `o`
+How do you open a new line above?,Use `O`
+How do you jump to a specific line?,Type `:linenumber`
+How do you join lines?,Use `J`
+How do you repeat the last command?,Use `.`
+How do you go to matching bracket/parenthesis?,Use `%`
+How do you record a macro?,Use `q[a-z]` to start, then `q` to stop
+How do you run a macro?,Use `@[a-z]`
+How do you enter command mode?,Press `:`
+How do you split the screen horizontally?,Type `:split` or `:sp`
+How do you split the screen vertically?,Type `:vsplit` or `:vsp`
+How do you switch between splits?,Use `Ctrl-w` followed by an arrow or `h/j/k/l`
+How do you open netrw file explorer?,Type `:Ex` or `:Explore`
+How do you enable line numbers?,Type `:set number`
+How do you disable line numbers?,Type `:set nonumber`
+How do you search and replace?,Type `:%s/old/new/g`
+How do you make search case-insensitive?,Type `:set ignorecase`
+How do you toggle relative line numbers?,Type `:set relativenumber`

@@ -1,0 +1,64 @@
+How do you list files?,Use `ls`
+How do you change directories?,Use `cd directory`
+How do you move up one directory?,Use `cd ..`
+How do you copy a file?,Use `cp source target`
+How do you move/rename a file?,Use `mv old new`
+How do you remove a file?,Use `rm filename`
+How do you view a file’s content?,Use `cat filename`
+How do you view one screen at a time?,Use `less filename`
+How do you find text in a file?,Use `grep "pattern" file`
+How do you search recursively?,Use `grep -r "pattern" .`
+How do you count lines in a file?,Use `wc -l filename`
+How do you list running processes?,Use `ps aux` or `top`
+How do you kill a process by PID?,Use `kill PID`
+How do you make a file executable?,Use `chmod +x filename`
+How do you run a script?,Use `./script.sh`
+How do you schedule a task with cron?,Use `crontab -e`
+How do you view environment variables?,Use `printenv` or `env`
+How do you set a variable?,Use `export VAR=value`
+How do you use a variable?,Use `$VAR`
+How do you see your current shell?,Use `echo $SHELL`
+How do you get your public IP?,Use `curl ifconfig.me`
+How do you redirect output to a file?,Use `>` like `echo "hi" > file.txt`
+How do you append output to a file?,Use `>>` like `echo "hi" >> file.txt`
+How do you redirect input from a file?,Use `<` like `wc -l < file.txt`
+How do you pipe output to another command?,Use `|` like `ls | grep ".txt"`
+How do you combine stdout and stderr?,Use `2>&1`
+What does `chmod +x` do?,Makes a script executable
+What does `chown` do?,Changes file ownership
+What does `export VAR=value` do?,Sets an environment variable
+How do you see all env variables?,Use `printenv` or `env`
+How do you make a variable persistent?,Add it to `.bashrc` or `.profile`
+How do you create a simple if-statement?,Use `if [ condition ]; then ... fi`
+How do you compare numbers in Bash?,Use `-eq`, `-lt`, `-gt` etc.
+How do you compare strings in Bash?,Use `=`, `!=`, `-z`, `-n`
+How do you write a loop over files?,`for f in *; do echo "$f"; done`
+How do you use a while loop?,`while [ condition ]; do ... done`
+How do you create a function in Bash?,`myfunc() { echo "hi"; }`
+How do you get the number of args passed?,Use `$#`
+How do you get the first argument?,Use `$1`
+How do you exit a script with code 1?,Use `exit 1`
+How do you debug a script?,Run with `bash -x script.sh`
+How do you define an array in Bash?,`arr=(one two three)`
+How do you access an array element?,`${arr[1]}`
+How do you loop over an array?,`for i in "${arr[@]}"; do ...; done`
+What does `${VAR:-default}` mean?,Use default if VAR is unset or empty
+What does `${VAR:+alt}` mean?,Use alt if VAR is set
+How do you get the length of a string?,`${#VAR}`
+How do you replace substrings?,`${VAR/search/replace}`
+How do you run a command and store its output?,Use backticks \`cmd\` or `$(cmd)`
+How do you run a command in a subshell?,Wrap it in `()` like `(cd /tmp && ls)`
+How do you group commands in the current shell?,Wrap in `{ ...; }`
+How do you ignore a signal like Ctrl+C?,Use `trap '' INT`
+How do you handle cleanup on exit?,Use `trap cleanup EXIT`
+How do you check if a command succeeded?,Use `if command; then ...; fi`
+How do you check exit status?,Use `$?`
+How do you short-circuit execution?,Use `cmd1 && cmd2` or `cmd1 || cmd2`
+What’s the difference between `[[ ]]` and `[ ]`?,`[[ ]]` is more flexible and safer in scripts
+How do you test if a file is executable?,Use `[ -x file ]`
+How do you create a temporary file?,Use `mktemp`
+How do you check if a variable is defined?,Use `[ -z "$VAR" ]` or `${VAR:+yes}`
+How do you get the script’s own filename?,Use `$0`
+How do you check if a command exists?,Use `command -v name`
+How do you time a command?,Use `time command`
+

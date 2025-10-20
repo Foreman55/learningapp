@@ -1,0 +1,46 @@
+question,answerRegex
+"How do you list all tables in the current PostgreSQL database?",(?i).*\\d\\s*$|.*\\dt.*|.*select.*from.*pg_tables.*
+"How do you show all databases in PostgreSQL?",(?i).*\\\\l.*|.*\\\\list.*
+"How do you connect to a specific database named 'appdb'?",(?i).*psql.*-d.*appdb.*|.*\\\\c.*appdb.*
+"How do you describe the structure of a table 'users' (show columns and types)?",(?i).*\\\\d.*users.*
+"How do you select all columns from the 'users' table?",(?i).*select.*\\*.*from.*users.*
+"How do you select only the 'name' and 'email' columns from the 'users' table?",(?i).*select.*name.*email.*from.*users.*
+"How do you insert a row into 'users' with columns (name, age)?",(?i).*insert.*into.*users.*\\(.*name.*age.*\\).*
+"How do you update the 'email' column in 'users' where id=1?",(?i).*update.*users.*set.*email.*=.*where.*id.*=.*
+"How do you delete all rows from the 'logs' table?",(?i).*delete.*from.*logs.*
+"How do you remove a table completely from the database?",(?i).*drop.*table.*logs.*
+"How do you create a new table named 'orders' with columns id and total?",(?i).*create.*table.*orders.*\\(.*id.*total.*\\).*
+"How do you add a new column 'created_at' to an existing table 'orders'?",(?i).*alter.*table.*orders.*add.*column.*created_at.*
+"How do you rename a column 'old_name' to 'new_name' in table 'users'?",(?i).*alter.*table.*users.*rename.*column.*old_name.*to.*new_name.*
+"How do you delete the column 'temp_data' from table 'users'?",(?i).*alter.*table.*users.*drop.*column.*temp_data.*
+"How do you add a primary key on column 'id' in table 'orders'?",(?i).*alter.*table.*orders.*add.*primary.*key.*\\(.*id.*\\).*
+"How do you create a foreign key from 'orders.user_id' referencing 'users.id'?",(?i).*alter.*table.*orders.*add.*foreign.*key.*\\(.*user_id.*\\).*references.*users.*\\(.*id.*\\).*
+"How do you list all columns of table 'products'?",(?i).*select.*column_name.*from.*information_schema\\.columns.*where.*table_name.*=.*'products'.*
+"How do you find all tables created by the current user?",(?i).*select.*tablename.*from.*pg_tables.*where.*schemaname.*=.*'public'.*
+"How do you show the current database name?",(?i).*select.*current_database.*\\(\\).*|.*\\\\conninfo.*
+"How do you list all users or roles in PostgreSQL?",(?i).*\\\\du.*|.*select.*rolname.*from.*pg_roles.*
+"How do you create a new PostgreSQL user named 'devuser'?",(?i).*create.*user.*devuser.*
+"How do you create a new database named 'analytics'?",(?i).*create.*database.*analytics.*
+"How do you drop a database named 'testdb'?",(?i).*drop.*database.*testdb.*
+"How do you grant all privileges on a table 'sales' to user 'analyst'?",(?i).*grant.*all.*privileges.*on.*sales.*to.*analyst.*
+"How do you revoke update permission on 'users' from 'guest'?",(?i).*revoke.*update.*on.*users.*from.*guest.*
+"How do you show all granted privileges for current user?",(?i).*\\z.*|.*\\\\dp.*
+"How do you change ownership of table 'sales' to user 'manager'?",(?i).*alter.*table.*sales.*owner.*to.*manager.*
+"How do you copy all data from table 'users' to file 'users.csv'?",(?i).*copy.*users.*to.*'.*users\\.csv.*'.*csv.*
+"How do you import data from 'data.csv' into table 'products'?",(?i).*copy.*products.*from.*'.*data\\.csv.*'.*csv.*
+"How do you select only the first 10 rows from 'orders'?",(?i).*select.*from.*orders.*limit.*10.*
+"How do you order 'employees' by 'salary' in descending order?",(?i).*select.*from.*employees.*order.*by.*salary.*desc.*
+"How do you filter rows in 'sales' where amount > 1000?",(?i).*select.*from.*sales.*where.*amount.*>.*1000.*
+"How do you count how many rows exist in 'users'?",(?i).*select.*count.*\\(.*\\*.*\\).*from.*users.*
+"How do you calculate the average 'price' from table 'products'?",(?i).*select.*avg.*\\(.*price.*\\).*from.*products.*
+"How do you group 'sales' by 'region' and sum 'amount'?",(?i).*select.*region.*sum.*\\(.*amount.*\\).*from.*sales.*group.*by.*region.*
+"How do you find unique values in column 'city' of 'customers'?",(?i).*select.*distinct.*city.*from.*customers.*
+"How do you show only rows where column 'name' is not null?",(?i).*select.*from.*where.*name.*is.*not.*null.*
+"How do you create an index on column 'email' in 'users'?",(?i).*create.*index.*on.*users.*\\(.*email.*\\).*
+"How do you drop an index named 'users_email_idx'?",(?i).*drop.*index.*users_email_idx.*
+"How do you show running queries in PostgreSQL?",(?i).*select.*from.*pg_stat_activity.*
+"How do you terminate a query by process id 12345?",(?i).*select.*pg_terminate_backend.*\\(.*12345.*\\).*
+"How do you backup a database named 'mydb' to file?",(?i).*pg_dump.*mydb.*>.*mydb.*\\.sql.*
+"How do you restore a database dump 'mydb.sql' into 'mydb'?",(?i).*psql.*-d.*mydb.*-f.*mydb.*\\.sql.*
+"How do you login as user 'postgres' in psql?",(?i).*psql.*-U.*postgres.*
+"How do you quit the psql interactive shell?",(?i).*\\\\q.*

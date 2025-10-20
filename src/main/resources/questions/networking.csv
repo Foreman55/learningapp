@@ -1,0 +1,12 @@
+question,answerRegex
+What does TCP/IP stand for?,(?i).*transmission.*control.*protocol.*internet.*
+What does DNS stand for?,(?i).*domain.*name.*system.*
+What port does HTTP use?,(?i).*80.*
+What port does HTTPS use?,(?i).*443.*
+What is the primary purpose of a router?,(?i).*connect.*networks.*
+What device assigns IP addresses in most networks?,(?i).*(dhcp|dynamic.*host.*configuration.*protocol).*
+What is the loopback IP address?,(?i).*127\.0\.0\.1.*
+What does LAN stand for?,(?i).*local.*area.*network.*
+What does WAN stand for?,(?i).*wide.*area.*network.*
+What is the function of a firewall?,(?i).*block.*unauthorized.*access.*
+
